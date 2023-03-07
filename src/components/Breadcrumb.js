@@ -11,7 +11,7 @@ const Breadcrumbs = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <link to="/">Office Room</link>
+              <Link to="/">Office Room</Link>
             </li>
             <li>
               <Link to="/" aria-label="current-page">

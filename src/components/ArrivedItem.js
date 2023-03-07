@@ -8,7 +8,7 @@ function numberFormat(price) {
   return currency.format(price);
 }
 function ArrivedItem({ item }) {
-  return (
+  return [
     <div className="px-4 relative card group">
       <div
         className="rounded-xl overflow-hidden card-shadow relative"
@@ -37,9 +37,16 @@ function ArrivedItem({ item }) {
       </div>
       <h5 className="text-lg font-semibold mt-4">{item.name}</h5>
       <span className="">{numberFormat(item.price)}</span>
-      <Link to={`/details/${item.id}`} className="stretched-link"></Link>
+      {/* <Link
+        to={{ pathname: `/details/${item.id}`, state: item }}
+        className="stretched-link"
+      ></Link> */}
+      <Link
+        to={`/details/${item.id}`} state={{item:item}} 
+        className="stretched-link"
+      ></Link>
     </div>
-  );
+  ];
 }
 
 export default ArrivedItem;
