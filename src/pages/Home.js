@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import Offline from "../components/Offline";
 import Splash from "./Splash";
 
-function Home() {
+function Home({ cart }) {
   const [items, setItems] = useState([]);
 
   const [offlineStatus, setOfflineStatus] = useState(!navigator.onLine);
@@ -64,7 +64,7 @@ function Home() {
       ) : (
         <>
           {offlineStatus && <Offline />}
-          <Header mode="light" />
+          <Header mode="light" cart={cart} />
           <Hero />
           <Browse />
           <Arrived items={items} />
